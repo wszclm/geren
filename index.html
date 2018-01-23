@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery.fullPage.css">
+    <style>
+        .section {
+            font-size: 60px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #menu {
+            width: 60px;
+            height: 110px;
+            position: fixed;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            margin-top:auto;
+            margin-bottom: auto;
+            z-index:9999;
+        }
+
+
+        #menu ul {
+            width: 60px;
+            height: 110px;
+            margin: 0 auto;
+        }
+        #menu li{
+            width:60px;
+            height: 20px;
+            margin-bottom: 2px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 3px;
+        }
+        #menu li.active{
+            background: rgba(0,0,0,0.6);
+        }
+        #menu a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #eaffea;
+            font-size:12px;
+            line-height:20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bolder;
+        }
+        .section1{
+            background: url("img/077485bcea94116a6ae37e0799e24acc05a832fdbdb9-yzyiLr_fw658.jpg") no-repeat center top;
+            background-size: 100% 30%;
+        }
+        .onetop{
+            width: 100%;
+            height: 20%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .onetop h1{
+            font-size: 36px;
+            text-align: center;
+            color: #000;
+            line-height: 60px;
+            margin-top: 30px;
+        }
+        .onetop p{
+            font-size: 12px;
+            text-align: center;
+            color: #939393;
+        }
+        .oneleft{
+            width: 50%;
+            height: 80%;
+            padding: 100px 0 0 200px;
+            box-sizing: border-box;
+            float: left;
+            transition: all 1s;
+        }
+        .oneright{
+            width: 50%;
+            height: 80%;
+            box-sizing: border-box;
+            padding: 100px 200px 0 0;
+            float: right;
+            transition: all 1s;
+        }
+        .two-left{
+            width:50%;
+            height:100%;
+            background:#64ff4e;
+            float:left;
+            transform:translateX(-1000px);
+            transition:.5s all;
+        }
+        .onel1{
+            width: 90%;
+            height: 40%;
+            box-sizing: border-box;
+            background: rgba(123, 133, 123, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        .onel1:first-child{
+            margin-bottom: 10%;
+        }
+        .tu{
+            width: 90px;
+            height: 80px;
+            display: block;
+            margin-top: 30px;
+            margin-left: 30px;
+            float: left;
+        }
+        .oner1{
+            width: 90%;
+            height: 40%;
+            box-sizing: border-box;
+            background: rgba(123, 133, 123, 0.2);
+            float: right;
+            overflow: hidden;
+            position: relative;
+        }
+        .oner1:hover{
+            background: rgba(123, 133, 123, 0.6);
+        }
+        .oner1:hover h2{
+             transform: translateY(-100px);
+         }
+        .onel1:hover h2{
+            transform: translateY(-100px);
+        }
+        .oner1:hover p{
+            transform: translateY(100px);
+        }
+        .onel1:hover p{
+            transform: translateY(100px);
+        }
+        .onel1:hover{
+            background: rgba(123, 133, 123, 0.6);
+        }
+        .oner1:first-child{
+            margin-bottom: 10%;
+        }
+        .wenzi{
+            width: 190px;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 30px 20px;
+            float: left;
+        }
+        .wenzi h2{
+            font-size: 16px;
+            line-height: 30px;
+            transition: all 1s;
+        }
+        .wenzi p{
+            font-size: 14px;
+            margin-top: 10px;
+            transition: all 1s;
+        }
+        .tiaozhuan{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 35px;
+            right: 60px;
+            opacity: 0;
+            z-index: -1;
+            transition: all 1s;
+        }
+        .oner1:hover .tiaozhuan{
+            opacity: 1;
+            z-index: 2;
+        }
+        .onel1:hover .tiaozhuan{
+            opacity: 1;
+            z-index: 2;
+        }
+        .tiaozhuan a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .tiaozhuan a img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="menu">
+        <ul>
+            <li data-menuanchor="p1" class="active"><a href="#p1">Top</a></li>
+            <li data-menuanchor="p2"><a href="#p2">自我介绍</a></li>
+            <li data-menuanchor="p3"><a href="#p3">掌握技能</a></li>
+            <li data-menuanchor="p4"><a href="#p4">我的作品</a></li>
+            <li data-menuanchor="p5"><a href="#p5">联系我吧</a></li>
+        </ul>
+    </div>
+    <div class="section section1">
+        <div class="onetop">
+            <h1>关于我的</h1>
+            <p>这里有我详细的资料及掌握的各项技能水平的说明</p>
+        </div>
+        <div class="oneleft">
+            <div class="onel1">
+                <img class="tu" src="img/main11.png" alt="">
+                <div class="wenzi">
+                    <h2>自我介绍</h2>
+                    <p>有关我的一些资料</p>
+                </div>
+                <div class="tiaozhuan"><a href="#p2"><img src="img/leader.png" alt=""></a></div>
+            </div>
+            <div class="onel1">
+                <img class="tu" src="img/main13.png" alt="">
+                <div class="wenzi">
+                    <h2>掌握技能</h2>
+                    <p>我所掌握的各项技能</p>
+                </div>
+                <div class="tiaozhuan"><a href="#p3"><img src="img/leader.png" alt=""></a></div>
+            </div>
+        </div>
+        <div class="oneright">
+            <div class="oner1">
+                <img class="tu" src="img/main14.png" alt="">
+                <div class="wenzi">
+                    <h2>我的作品</h2>
+                    <p>我历年来的作品</p>
+                </div>
+                <div class="tiaozhuan"><a href="#p4"><img src="img/leader.png" alt=""></a></div>
+            </div>
+            <div class="oner1">
+                <img class="tu" src="img/main15.png" alt="">
+                <div class="wenzi">
+                    <h2>联系我吧</h2>
+                    <p>可以随时联系我哦！</p>
+                </div>
+                <div class="tiaozhuan"><a href="#p5"><img src="img/leader.png" alt=""></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="two-left"></div>
+        <div class="two-right"></div>
+    </div>
+    <div class="section">3</div>
+    <div class="section">4</div>
+    <div class="section">5</div>
+</div>
+</body>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="jquery.easing.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $("#container").fullpage({
+        verticalCentered: false,
+        anchors: ["p1", "p2", "p3", "p4", "p5"],
+        sectionsColor: ["#9DD0E5", "yellow", "red", "#f88", "#99f"],
+        scrollingSpeed: 1000,
+        continuousVertical: true,
+        fixedElements:"#menu",
+        menu:"#menu",
+        afterLoad:function(anchor,index){
+            if (index===1){
+                $(".onetop").css("transform","translateY(0)");
+                $(".oneleft").css("transform","translateX(0)");
+                $(".oneright").css("transform","translateX(0)");
+            }
+            if(index===2){
+             $(".two-left").css("transform","translateX(0)");
+             $(".two-right").css("transform","translateX(0)");
+            }
+        },
+        onLeave:function(index){
+            if (index===1){
+                $(".onetop").css("transform","translateY(-200px)");
+                $(".oneleft").css("transform","translateX(-1000px)");
+                $(".oneright").css("transform","translateX(1000px)");
+            }
+            if(index===2){
+                $(".two-left").css("transform","translateX(-1000px)");
+                $(".two-right").css("transform","translateX(1000px)");
+            }
+        }
+    });
+</script>
+</html>
