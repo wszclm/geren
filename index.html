@@ -17,13 +17,24 @@
     <div id="menu">
         <ul>
             <li data-menuanchor="p1" class="active"><a href="#p1">Top</a></li>
-            <li data-menuanchor="p2"><a href="#p2">自我介绍</a></li>
-            <li data-menuanchor="p3"><a href="#p3">掌握技能</a></li>
-            <li data-menuanchor="p4"><a href="#p4">我的作品</a></li>
-            <li data-menuanchor="p5"><a href="#p5">联系我吧</a></li>
+            <li data-menuanchor="p2"><a href="#p2">个人汇总</a></li>
+            <li data-menuanchor="p3"><a href="#p3">自我介绍</a></li>
+            <li data-menuanchor="p4"><a href="#p4">掌握技能</a></li>
+            <li data-menuanchor="p5"><a href="#p5">我的作品</a></li>
+            <li data-menuanchor="p6"><a href="#p6">联系我吧</a></li>
         </ul>
     </div>
     <div class="section section1">
+        <div class="back">
+            <div class="handimg"></div>
+            <div class="message">
+                <h3>I'M ShouZhang Wang</h3>
+                <p>- Front-end Web Developer -</p>
+                <em>前端工程师属于IT技术职业的一种，是近5年发展起来的职业，旧的体系将其定义为Web前端工程师，主要的技术包含：HTML、JavaScript、CSS。但IT技术属于变化比较快的领域，最近发生了很大的<br> 变革，新的体系下，前端工程师技术又增加了：nodejs、Hybrid App。</em>
+            </div>
+        </div>
+    </div>
+    <div class="section section2">
         <div class="onetop">
             <h1>关于我的</h1>
             <p>这里有我详细的资料及掌握的各项技能水平的说明</p>
@@ -66,12 +77,12 @@
         </div>
     </div>
     <div class="section">
-        <div class="two-left"></div>
-        <div class="two-right"></div>
+         <div class="threeleft"></div>
+        <div class="threeright"></div>
     </div>
-    <div class="section">3</div>
     <div class="section">4</div>
     <div class="section">5</div>
+    <div class="section">6</div>
 </div>
 </body>
 <script src="js/jquery-3.2.1.js"></script>
@@ -80,32 +91,36 @@
 <script>
     $("#container").fullpage({
         verticalCentered: false,
-        anchors: ["p1", "p2", "p3", "p4", "p5"],
-        sectionsColor: ["#9DD0E5", "yellow", "red", "#f88", "#99f"],
+        anchors: ["p1", "p2", "p3", "p4", "p5","p6"],
+        sectionsColor: ["#9DD0E5", "#9DD0E5", "red", "#f88", "#99f","#f6f"],
         scrollingSpeed: 1000,
         continuousVertical: true,
         fixedElements:"#menu",
         menu:"#menu",
         afterLoad:function(anchor,index){
-            if (index===1){
+            if (index===2){
                 $(".onetop").css("transform","translateY(0)");
                 $(".oneleft").css("transform","translateX(0)");
                 $(".oneright").css("transform","translateX(0)");
             }
-            if(index===2){
-             $(".two-left").css("transform","translateX(0)");
-             $(".two-right").css("transform","translateX(0)");
+            if(index===1){
+                $(".handimg").css("transform","translateY(0)");
+                $(".message h3").css("transform","translateX(0)");
+                $(".message p").css("transform","translateX(0)");
+                $(".message em").css("transform","translateY(0)");
             }
         },
         onLeave:function(index){
-            if (index===1){
+            if (index===2){
                 $(".onetop").css("transform","translateY(-200px)");
                 $(".oneleft").css("transform","translateX(-1000px)");
                 $(".oneright").css("transform","translateX(1000px)");
             }
-            if(index===2){
-                $(".two-left").css("transform","translateX(-1000px)");
-                $(".two-right").css("transform","translateX(1000px)");
+            if(index===1){
+                $(".handimg").css("transform","translateY(-600px)");
+                $(".message h3").css("transform","translateX(-1000px)");
+                $(".message p").css("transform","translateX(1000px)");
+                $(".message em").css("transform","translateY(600px)");
             }
         }
     });
