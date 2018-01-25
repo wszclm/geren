@@ -93,3 +93,17 @@ can(canvasObj[4],85,"#fff322");
         $(".section5 ul").transition({rotateY:"-=60"})
     })
 }
+{
+    let con=document.querySelector("#con");
+    con.innerHTML="message"
+    con.onfocus=function () {
+        if (con.innerHTML=="message"){
+            con.innerHTML=""
+        }
+    }
+    con.onblur=function () {
+        if (con.innerHTML===""||con.innerHTML==="message"){
+            con.innerHTML="message"
+        }
+    }
+}

@@ -4,7 +4,17 @@
     position: relative;
     box-sizing: border-box;
 }
-
+@font-face {
+    font-family: 'iconfont';  /* project id 506398 */
+    src: url('https://at.alicdn.com/t/font_506398_lfye72q4n1cyp66r.eot');
+    src: url('https://at.alicdn.com/t/font_506398_lfye72q4n1cyp66r.eot?#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_506398_lfye72q4n1cyp66r.woff') format('woff'),
+    url('https://at.alicdn.com/t/font_506398_lfye72q4n1cyp66r.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_506398_lfye72q4n1cyp66r.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family: "iconfont";
+}
 * {
     padding: 0;
     margin: 0;
@@ -208,11 +218,13 @@
 .wenzi h2{
     font-size: 16px;
     line-height: 30px;
+    margin-left: 80px;
     transition: all 1s;
 }
 .wenzi p{
     font-size: 14px;
     margin-top: 10px;
+    margin-left: 80px;
     transition: all 1s;
 }
 .tiaozhuan{
@@ -220,7 +232,7 @@
     width: 50px;
     height: 50px;
     top: 35px;
-    right: 60px;
+    right: 120px;
     opacity: 0;
     z-index: -1;
     transition: all 1s;
@@ -335,7 +347,7 @@
 canvas{
     width: 200px;
     height: 200px;
-    transition: all 1s;
+    transition: all 2s;
 }
 canvas:hover{
     transform: scale(1.1,1.1);
@@ -362,7 +374,6 @@ canvas:hover{
     background-image: -o-linear-gradient(#7ae4ff, #53ff47);
     background-image: -ms-linear-gradient(#7ae4ff, #53ff47);
     background-image: -moz-linear-gradient(#7ae4ff, #53ff47);
-
 }
 .scene {
     width: 500px;
@@ -381,11 +392,11 @@ canvas:hover{
     list-style: none;
     width: 300px;
     height: 300px;
-    margin: 100px auto 0;
+    margin: 120px auto 0;
     position: relative;
     transform-style: preserve-3d;
     transition: all 1s;
-    transform-origin: center center -300px;
+    transform-origin: center center -350px;
 }
 
 .section5 ul li {
@@ -398,37 +409,45 @@ canvas:hover{
     text-align: center;
     line-height: 300px;
     border-radius: 10px;
-    transform-origin: center center -300px;
+    transform-origin: center center -350px;
     transform: translateZ(-260px);
+    overflow: hidden;
+    transition: all 0.5s;
 }
 
 .section5 ul li:nth-child(1) {
-    background: rgba(255, 255, 0, 0.61);
+    background: url("../img/3d0.jpg") no-repeat center center;
+    background-size: auto 300px;
     transform: rotateY(60deg);
 }
 
 .section5 ul li:nth-child(2) {
-    background: rgba(255, 207, 37, 0.61);
+    background: url("../img/360.jpg") no-repeat center center;
+    background-size: auto 300px;
     transform: rotateY(120deg);
 }
 
 .section5 ul li:nth-child(3) {
-    background: rgba(51, 255, 51, 0.6);
+    background: url("../img/waimai.jpg") no-repeat center center;
+    background-size: auto 300px;
     transform: rotateY(180deg);
 }
 
 .section5 ul li:nth-child(4) {
-    background: rgba(255, 51, 51, 0.61);
+    background: url("../img/suning.jpg") no-repeat center center;
+    background-size: auto 300px;
     transform: rotateY(240deg);
 }
 
 .section5 ul li:nth-child(5) {
-    background: rgba(51, 255, 255, 0.62);
+    background: url("../img/iphone.jpg") no-repeat center center;
+    background-size: auto 300px;
     transform: rotateY(300deg);
 }
 
 .section5 ul li:nth-child(6) {
-    background: rgba(255, 51, 255, 0.61);
+    background: url("../img/xiaomi.jpg") no-repeat center center;
+    background-size: auto 300px;
     transform: rotateY(0deg);
 }
 /*.scene:hover ul{*/
@@ -447,12 +466,167 @@ canvas:hover{
     font-weight: bolder;
     z-index: 999;
     font-size: 16px;
+    background: rgba(51, 51, 51, 0.38);
 }
 .next{
-    left: 200px;
+    left: 500px;
     bottom: 50px;
 }
+.next:hover,.prev:hover{
+    border: 4px solid #b94c85;
+    color: #b74786;
+    font-weight: bolder;
+    background: rgba(51, 51, 51, 0.69);
+}
 .prev{
-    right: 200px;
+    right: 500px;
     bottom: 50px;
+}
+.fiti{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    font-size: 36px;
+    font-weight: bolder;
+    text-align: center;
+}
+.filink{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(0,0);
+    transition: all 0.5s;
+}
+.section5 ul li:hover .filink{
+    transform: scale(1,1);
+}
+.filink a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto auto;
+}
+.filink a img{
+    width: 100%;
+    height: 100%;
+}
+.section5 ul li h2{
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-left:auto;
+    margin-right: auto;
+    width: 100px;
+    height: 30px;
+    bottom: 200px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.section6{
+    background-image: -webkit-linear-gradient(#54ff46, #9d764f);
+    background-image: -o-linear-gradient(#53ff47, #b48c60);
+    background-image: -ms-linear-gradient(#53ff47, #b48c60);
+    background-image: -moz-linear-gradient(#53ff47, #b48c60);
+}
+.sixti{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    font-size: 36px;
+    font-weight: bolder;
+    text-align: center;
+}
+.row li{
+    box-sizing: border-box;
+    padding: 0 12px;
+}
+.row{
+    width: 80%;
+    margin: 100px auto;
+}
+input[class]{
+    height: 44px;
+    min-width: 100%;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    outline: none;
+    margin-bottom: 10px;
+    border: 1px solid #E4e7e9;
+}
+input[type="submit"]{
+    transform: translateY(-20px);
+}
+input[placeholder="write your E-mail"]{
+    transform: translateY(-15px);
+}
+textarea{
+    min-width: 100%;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    color: #757575;
+    margin-bottom: 10px;
+    height: 100px;
+    border: 1px solid #E4e7e9;
+    display: block;
+    resize: none;
+    font-size: 16px;
+}
+.lx1{
+    height: 420px;
+}
+.lx2{
+    height: 300px;
+    margin-top: 30px;
+}
+input:last-of-type{
+    background: #333;
+    color: #fff;
+    width: 100px;
+    border-radius: 4px;
+    height: 44px;
+    outline: none;
+    border: 1px solid #E4e7e9;
+}
+.lx21{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 35px;
+}
+.lx22{
+    width: 60px;
+    height: 60px;
+    background: #f6f6f6;
+    font-size: 24px;
+    text-align: center;
+    color: #000000;
+    line-height: 60px;
+    margin-right: 10px;
+    float: left;
+}
+.lx23{
+    font-size: 16px;
+    color: #1f1f1f;
+    float: left;
+    line-height: 30px;
+}
+input:focus{
+    outline: none;
+}
+textarea:focus{
+    outline: none;
 }
